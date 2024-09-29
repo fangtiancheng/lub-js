@@ -16,7 +16,7 @@ def processJsInfo(jsInfo: Dict[str, List[Dict[str, Any]]]) -> List[Tuple[str, Li
                 for sec in range(startSec, endSec + 1):
                     roomSecs[sec] = True # TODO: IndexError
             result.append((roomName, roomSecs))
-    return result
+    return sorted(result, key=lambda x: x[0])
 
 def drawJs(jsInfo: List[Tuple[str, List[bool]]], savePath: str) -> Optional[str]:
     # TODO:
