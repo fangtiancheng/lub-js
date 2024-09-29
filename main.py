@@ -13,8 +13,8 @@ def processJsInfo(jsInfo: Dict[str, List[Dict[str, Any]]]) -> List[Tuple[str, Li
             for course in room.get('roomCourseList', []):
                 startSec:int = course.get('startSection', 0)
                 endSec:int = course.get('endSection', 0)
-            for sec in range(startSec, endSec + 1):
-                roomSecs[sec] = True # TODO: IndexError
+                for sec in range(startSec, endSec + 1):
+                    roomSecs[sec] = True # TODO: IndexError
             result.append((roomName, roomSecs))
     return result
 
@@ -23,7 +23,7 @@ def drawJs(jsInfo: List[Tuple[str, List[bool]]], savePath: str) -> Optional[str]
     return savePath
 
 if __name__ == '__main__':
-    targetBuilding = '东下院'
+    targetBuilding = '东中院'
     jsInfoSavePath = targetBuilding + '.json'
     jsInfo = getRoomCourse(targetBuilding, datetime.date.today())
     # with open(jsInfoSavePath, 'w') as f:
