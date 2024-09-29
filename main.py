@@ -18,7 +18,7 @@ def processJsInfo(jsInfo: Dict[str, List[Dict[str, Any]]]) -> List[Tuple[str, Li
             result.append((roomName, roomSecs))
     return result
 
-def drawJs(jsInfo, savePath:str) -> Optional[str]:
+def drawJs(jsInfo: List[Tuple[str, List[bool]]], savePath: str) -> Optional[str]:
     # TODO:
     return savePath
 
